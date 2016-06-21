@@ -1,0 +1,6 @@
+{
+  "name": "elasticsearch",
+  "main": "src/elasticsearch.d.ts",
+  "homepage": "http://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/index.html",
+  "version": "11.0.1"
+}
