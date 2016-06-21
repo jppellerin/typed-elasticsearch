@@ -1,5 +1,13 @@
 declare namespace elasticsearch {
 
+    enum loggingLevels {
+        error = 1,
+        warning,
+        info,
+        debug,
+        trace
+    }
+
     interface ISSL {
 
         pfx?: string | Array<string>;
@@ -100,7 +108,7 @@ declare namespace elasticsearch {
         df?: string;
         explain?: boolean;
         fields?: string | Array<string> | boolean;
-        fielddataFields : string | Array<string> | boolean;
+        fielddataFields?: string | Array<string> | boolean;
         from?: number;
         ignoreUnavailabe?: boolean;
         allowNoIndices?: boolean;
@@ -167,7 +175,8 @@ declare namespace elasticsearch {
         //reindex
         //renderSearchTemplate
         //scroll
-        search(params: IClientSearchParams, callback: (error, response) => void);
+        search(params: IClientSearchParams): Promise<any>;
+        search(params: IClientSearchParams, callback: (error, response) => void): void;
         //searchExists
         //searchShards
         //searchTemplate
